@@ -29,4 +29,12 @@ describe('generate css', () => {
       customIcon: {},
     })).toMatchSnapshot()
   })
+
+  it('default labels', async () => {
+    const labels = new Set(['npm'])
+    expect(await generateCSS(labels, {
+      customIcon: {},
+      defaultLabels: ['yarn'],
+    })).toMatchSnapshot()
+  })
 })
