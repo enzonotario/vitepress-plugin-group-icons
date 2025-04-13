@@ -37,4 +37,14 @@ describe('generate css', () => {
       defaultLabels: ['yarn'],
     })).toMatchSnapshot()
   })
+
+  it('default labels with custom icon', async () => {
+    const labels = new Set(['npm'])
+    expect(await generateCSS(labels, {
+      customIcon: {
+        curl: 'logos:curl',
+      },
+      defaultLabels: ['curl'],
+    })).toMatchSnapshot()
+  })
 })
