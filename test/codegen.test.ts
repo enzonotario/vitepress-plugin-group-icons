@@ -10,13 +10,13 @@ describe('generate css', () => {
     })).toMatchSnapshot()
   })
 
-  it('custom icon', { timeout: 10000 }, async () => {
+  it('custom icon', { timeout: 0 }, async () => {
     const labels = new Set(['vitepress', 'ae', 'oxc'])
     expect(await generateCSS(labels, {
       customIcon: {
         ae: 'logos:adobe-after-effects',
         vitepress: localIconLoader(import.meta.url, '../docs/assets/vitepress.svg'),
-        oxc: 'https://vp.yuy1n.io/oxc.svg',
+        oxc: 'https://cdn.jsdelivr.net/gh/oxc-project/oxc-assets/round.svg',
       },
     })).toMatchSnapshot()
   })
