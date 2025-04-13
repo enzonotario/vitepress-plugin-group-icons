@@ -16,7 +16,6 @@ describe('generate css', () => {
       customIcon: {
         ae: 'logos:adobe-after-effects',
         vitepress: localIconLoader(import.meta.url, '../docs/assets/vitepress.svg'),
-        oxc: 'https://cdn.jsdelivr.net/gh/oxc-project/oxc-assets/round.svg',
       },
     })).toMatchSnapshot()
   })
