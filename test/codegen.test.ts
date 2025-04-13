@@ -10,7 +10,7 @@ describe('generate css', () => {
     })).toMatchSnapshot()
   })
 
-  it('custom icon', async () => {
+  it('custom icon', { timeout: 10000 }, async () => {
     const labels = new Set(['vitepress', 'ae', 'oxc'])
     expect(await generateCSS(labels, {
       customIcon: {
@@ -19,8 +19,6 @@ describe('generate css', () => {
         oxc: 'https://vp.yuy1n.io/oxc.svg',
       },
     })).toMatchSnapshot()
-  }, {
-    timeout: 10000,
   })
 
   it('duplicate label', async () => {
